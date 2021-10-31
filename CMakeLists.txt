@@ -10,6 +10,8 @@ add_subdirectory(external/glad/src)
 target_include_directories(${PROJECT_NAME}
     PUBLIC external/glfw-3.3.5/include
     PUBLIC external/glad/include
+    PUBLIC include
+    PUBLIC include/vendor
 )
 
 target_link_directories(${PROJECT_NAME}
