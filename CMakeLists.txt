@@ -12,6 +12,8 @@ target_include_directories(${PROJECT_NAME}
     PUBLIC external/glad/include
     PUBLIC include
     PUBLIC include/vendor
+    PUBLIC res
+    PUBLIC res/Shader
 )
 
 target_link_directories(${PROJECT_NAME}
