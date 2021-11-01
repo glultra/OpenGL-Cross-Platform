@@ -1,4 +1,5 @@
-#pragma once
+#ifndef ULT_INCLUDE_MODEL_HPP
+#define ULT_INCLUDE_MODEL_HPP
 
 #include <Mesh.hpp>
 #include <Shader.h>
@@ -216,3 +217,5 @@ unsigned int TextureFromFile(const char* path, const string& directory)
 
 	return textureID;
 }
+
+#endif
