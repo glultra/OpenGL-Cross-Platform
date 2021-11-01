@@ -6,6 +6,7 @@ add_executable(${PROJECT_NAME} main.cpp)
 
 add_subdirectory(external/glfw-3.3.5)
 add_subdirectory(external/glad/src)
+add_subdirectory(external/imgui/src)
 add_subdirectory(src)
 
 add_custom_target(always_rebuild ALL
@@ -16,6 +17,7 @@ add_custom_target(always_rebuild ALL
 target_include_directories(${PROJECT_NAME}
     PUBLIC external/glfw-3.3.5/include
     PUBLIC external/glad/include
+    PUBLIC external/imgui/include
     PUBLIC include
     PUBLIC include/vendor
 )
@@ -23,11 +25,12 @@ target_include_directories(${PROJECT_NAME}
 target_link_directories(${PROJECT_NAME}
     PRIVATE external/glfw-3.3.5/src
     PRIVATE external/glad/src
+    PRIVATE external/imgui/src
     PRIVATE src
 )
 
 IF(WIN32)
-    target_link_libraries(${PROJECT_NAME} glfw GLAD Engine shell32 user32 opengl32 winmm gdi32)
+    target_link_libraries(${PROJECT_NAME} glfw GLAD IMGUI Engine shell32 user32 opengl32 winmm gdi32)
 ELSEIF(UNIX)
-    target_link_libraries(${PROJECT_NAME} glfw GLAD Engine dl)
+    target_link_libraries(${PROJECT_NAME} glfw GLAD IMGUI Engine dl)
 ENDIF()
