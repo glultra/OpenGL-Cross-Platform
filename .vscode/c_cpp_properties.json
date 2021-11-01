@@ -5,7 +5,8 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/external/glfw-3.3.5/include",
-                "${workspaceFolder}/external/stb/include"
+                "${workspaceFolder}/external/stb/include",
+                "${workspaceFolder}/external/assimp/include"
             ],
             "defines": [
                 "_DEBUG",
