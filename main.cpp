@@ -1,20 +1,20 @@
-#include <glad/glad.h
+#include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
 #include <cmath>
 
-#include "Shader.h"
-#include "Camera.hpp"
+#include <Shader.h>
+#include <Camera.hpp>
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
 
-#include "stb_image.h"
-#include "imgui.h"
-#include "imgui_impl_glfw.h"
-#include "imgui_impl_opengl3.h"
+#include <stb_image.h>
+#include <imgui.h>
+#include <imgui_impl_glfw.h>
+#include <imgui_impl_opengl3.h>
 
 
 #define SCR_WIDTH 1000
@@ -126,9 +126,9 @@ int main()
 	//glfwSetInputMode(window, GLFW_CURSOR,GLFW_CURSOR_DISABLED);
 
 	// check Glew 
-	if (glewInit() != GLEW_OK)
+	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
 	{
-		std::cout << "Failed to initialize Glew\n";
+		std::cout << "Failed to initialize Glad\n";
 		glfwTerminate();
 	}
 
@@ -180,7 +180,7 @@ int main()
 	GLuint pyramid_texture = load_texture("res/Texture/pyramid.jpg");
 
 	/* Shader */
-	Shader myShader("res/Shader/vertexShader.glsl", "res/Shader/fragmentShader.glsl");
+	Shader myShader("res/Shader/Shader.vert", "res/Shader/Shader.frag");
 	myShader.use();
 	myShader.setInt("container_texture", 0);
 	myShader.setInt("face_texture", 1);
