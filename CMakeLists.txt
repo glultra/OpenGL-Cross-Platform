@@ -30,7 +30,7 @@ target_link_directories(${PROJECT_NAME}
 )
 
 IF(WIN32)
-    target_link_libraries(${PROJECT_NAME} glfw GLAD IMGUI Engine shell32 user32 opengl32 winmm gdi32)
+    target_link_libraries(${PROJECT_NAME} glfw GLAD IMGUI STB Engine shell32 user32 opengl32 winmm gdi32)
 ELSEIF(UNIX)
-    target_link_libraries(${PROJECT_NAME} glfw GLAD IMGUI Engine dl)
+    target_link_libraries(${PROJECT_NAME} glfw GLAD IMGUI STB Engine dl)
 ENDIF()
