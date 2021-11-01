@@ -78,6 +78,7 @@ int main()
 	glEnableVertexAttribArray(1);
 
 	/* Shader */
+    std::cout << __FILE__ << std::endl;
 	Shader myShader("res/Shader/Shader.vert", "res/Shader/Shader.frag");
 
 

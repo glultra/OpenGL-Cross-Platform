@@ -8,6 +8,11 @@ add_subdirectory(external/glfw-3.3.5)
 add_subdirectory(external/glad/src)
 add_subdirectory(src)
 
+add_custom_target(always_rebuild ALL
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+    ${CMAKE_SOURCE_DIR}/res ${CMAKE_BINARY_DIR}/res
+)
+
 target_include_directories(${PROJECT_NAME}
     PUBLIC external/glfw-3.3.5/include
     PUBLIC external/glad/include
@@ -24,5 +29,5 @@ target_link_directories(${PROJECT_NAME}
 IF(WIN32)
     target_link_libraries(${PROJECT_NAME} glfw GLAD Engine shell32 user32 opengl32 winmm gdi32)
 ELSEIF(UNIX)
-    target_link_libraries(${PROJECT_NAME} glfw GLAD Engine)
+    target_link_libraries(${PROJECT_NAME} glfw GLAD Engine dl)
 ENDIF()
