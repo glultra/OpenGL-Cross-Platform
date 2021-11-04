@@ -21,3 +21,8 @@ $`sudo apt-get install libglfw3 libglfw3-dev`
 `make` or `cmake --build .`
 ### Wait until every thing is done
 `./OpenGL`
+
+# 2. Setup on Windows
+
+### You should have this things
+1. MinGW Compiler https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win32/Personal%20Builds/mingw-builds/8.1.0/
