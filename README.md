@@ -45,8 +45,8 @@ $`sudo apt-get install libglfw3 libglfw3-dev`
 ### You should already have this things
 
 1- `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)`
-1- `brew install gcc`
-2- `brew install cmake`
+2- `brew install gcc`
+3- `brew install cmake`
 
 ### First download glfw
 $`brew install glfw`
