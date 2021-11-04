@@ -1,3 +1,8 @@
+# OpenGL Cross Platform
+## WELCOME TO MODERN OPENGL CROSS PLATFORMS
+### In this github repository you can easily setup OpenGL on diffrent Operating Systems like
+### Windows,MacOS and Linux so feel free to use it and build it quickly on Your OS.
+#### it includes specific libraries like glfw,glad,imgui,stb_image,glm and assimp.
 # Setup on Linux 
 ### You should already have this things
 
