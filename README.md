@@ -1,8 +1,8 @@
 # Setup on Linux 
 ### You should already have this things
 
-** 1- `sudo install gcc` **
-** 2- `sudo install cmake` **
+1- `sudo install gcc`
+2- `sudo install cmake`
 
 ### First download glfw-x11 
 $`sudo apt-get install libglfw3 libglfw3-dev`
