@@ -28,7 +28,9 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath)
 	catch (std::ifstream::failure e)
 	{
 		std::cout << "FAILED::FILES::TO_READ\n";
+#if !defined(__APPLE__)
 		glfwTerminate();
+#endif
 		return;
 	}
 

@@ -1,7 +1,9 @@
 #pragma once
 
 #include <glad/glad.h>
-#include <GLFW/glfw3.h>
+#if !defined(__APPLE__)
+    #include <GLFW/glfw3.h>
+#endif
 
 // Reading Files
 #include <iostream>
