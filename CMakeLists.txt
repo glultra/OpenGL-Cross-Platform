@@ -10,6 +10,7 @@ add_subdirectory(external/glad/src)
 add_subdirectory(external/imgui/src)
 add_subdirectory(external/stb/src)
 add_subdirectory(src)
+add_subdirectory(examples)
 
 add_custom_target(always_rebuild ALL
     COMMAND ${CMAKE_COMMAND} -E copy_directory
