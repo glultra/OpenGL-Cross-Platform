@@ -29,7 +29,7 @@ $`sudo apt-get update`
 1- $`sudo apt install gcc`
 2- $`sudo apt install cmake`
 
-### download x11 ,libxrandr ,libxinerama ,libxcursor-dev and libxi.
+### download x11 ,libxrandr ,libxinerama ,libxcursor and libxi.
 $`sudo apt-get install libx11-dev`
 $`sudo apt-get install -y libxrandr-dev`
 $`sudo apt-get install libxinerama-dev`
