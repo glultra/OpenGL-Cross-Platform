@@ -13,19 +13,21 @@
 ### Download github repo or clone it
 ### Open Terminal in the project
 ### Then type 
-`cmake -S . -B ./build/ -G "MinGW Makefiles" -D GLFW_BUILD_DOCS=OFF`
+$`cmake -S . -B ./build/ -G "MinGW Makefiles" -D GLFW_BUILD_DOCS=OFF`
 ### Then goto the built dir
-`cd ./build/`
+$`cd ./build/`
 ### Then type
-`make` or `mingw32-make` or `cmake --build .`
+$`make` or `mingw32-make` or `cmake --build .`
 ### Wait until every thing is done
-`./OpenGL`
+$`./OpenGL`
 
 # 2. Setup on Linux 
+
+$`sudo apt-get update`
 ### You should already have this things
 
-1- `sudo apt install gcc`
-2- `sudo apt install cmake`
+1- $`sudo apt install gcc`
+2- $`sudo apt install cmake`
 
 ### download x11 ,libxrandr ,libxinerama ,libxcursor-dev and libxi.
 $`sudo apt-get install libx11-dev`
@@ -33,19 +35,23 @@ $`sudo apt-get install -y libxrandr-dev`
 $`sudo apt-get install libxinerama-dev`
 $`sudo apt-get install libxcursor-dev`
 $`sudo apt-get install libxi-dev`
+
+### Update
+$`sudo apt-get update`
+
 ### Then Download glfw
 $`sudo apt-get install libglfw3 libglfw3-dev`
 
 ### Download github repo or clone it
 ### Open Terminal in the project
 ### Then type 
-`cmake -S . -B ./build/ -G "Unix Makefiles" -D GLFW_BUILD_DOCS=OFF`
+$`cmake -S . -B ./build/ -G "Unix Makefiles" -D GLFW_BUILD_DOCS=OFF`
 ### Then goto the built dir
-`cd ./build/`
+$`cd ./build/`
 ### Then type
-`make` or `cmake --build .`
+$`make` or `cmake --build .`
 ### Wait until every thing is done
-`./OpenGL`
+$`./OpenGL`
 
 
 # 3. Setup on MacOS 
