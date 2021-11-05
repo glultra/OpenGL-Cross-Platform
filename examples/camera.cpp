@@ -166,7 +166,7 @@ int main()
 	GLuint pyramid_texture = load_texture("res/Texture/pyramid.jpg");
 
 	/* Shader */
-	Shader myShader("res/Shader/vertexShader.glsl", "res/Shader/fragmentShader.glsl");
+	Shader myShader("res/Shader/Camera.vert", "res/Shader/Camera.frag");
 	myShader.use();
 	myShader.setInt("container_texture", 0);
 	myShader.setInt("face_texture", 1);
