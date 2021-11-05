@@ -27,8 +27,9 @@
 1- `sudo apt install gcc`
 2- `sudo apt install cmake`
 
-### First download glfw-x11 
+### First download glfw and x11 
 $`sudo apt-get install libglfw3 libglfw3-dev`
+$`sudo apt-get install libx11-dev`
 ### Download github repo or clone it
 ### Open Terminal in the project
 ### Then type 
