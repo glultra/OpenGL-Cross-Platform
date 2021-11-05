@@ -27,9 +27,15 @@
 1- `sudo apt install gcc`
 2- `sudo apt install cmake`
 
-### download glfw and x11 
-$`sudo apt-get install libglfw3 libglfw3-dev`
+### download x11 ,libxrandr ,libxinerama ,libxcursor-dev and libxi.
 $`sudo apt-get install libx11-dev`
+$`sudo apt-get install -y libxrandr-dev`
+$`sudo apt-get install libxinerama-dev`
+$`sudo apt-get install libxcursor-dev`
+$`sudo apt-get install libxi-dev`
+### Then Download glfw
+$`sudo apt-get install libglfw3 libglfw3-dev`
+
 ### Download github repo or clone it
 ### Open Terminal in the project
 ### Then type 
