@@ -15,6 +15,8 @@ add_subdirectory(examples)
 add_custom_target(always_rebuild ALL
     COMMAND ${CMAKE_COMMAND} -E copy_directory
     ${CMAKE_SOURCE_DIR}/res ${CMAKE_BINARY_DIR}/res
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+    ${CMAKE_SOURCE_DIR}/examples/res ${CMAKE_BINARY_DIR}/examples/res
 )
 
 target_include_directories(${PROJECT_NAME}
