@@ -3,12 +3,12 @@ cmake_minimum_required(VERSION 3.14.0)
 project(window)
 project(rectangle)
 project(shader)
-project(tranformation)
+project(transformation)
 
 add_executable(window window.cpp)
 add_executable(rectangle rectangle.cpp)
 add_executable(shader shader.cpp)
-add_executable(tranformation tranformation.cpp)
+add_executable(transformation transformation.cpp)
 
 include_directories(
     PUBLIC ../external/glfw-3.3.5/include

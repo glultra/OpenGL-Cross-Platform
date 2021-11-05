@@ -91,7 +91,7 @@ int main()
 	glEnableVertexAttribArray(1);
 
 	/* Shader */
-	Shader myShader("res/Shader/vertexShader.glsl", "res/Shader/fragmentShader.glsl");
+	Shader myShader("res/Shader/Shader1.vert", "res/Shader/Shader1.frag");
 
 	/* Game Loop */
 	while (!glfwWindowShouldClose(window))
