@@ -12,5 +12,5 @@ git clone https://github.com/glULTRA/OpenGL-Cross-Platform.git;
 cd OpenGL-Cross-Platform/;
 cmake -S . -B ./build/ -G "Unix Makefiles" -D GLFW_BUILD_DOCS=OFF;
 cd ./build/;
-make` or `cmake --build .;
+cmake --build .;
 ./OpenGL;
