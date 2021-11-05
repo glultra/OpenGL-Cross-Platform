@@ -43,7 +43,10 @@ $`sudo apt-get update`
 $`sudo apt-get install libglfw3 libglfw3-dev`
 
 ### Download github repo or clone it
+$`git clone https://github.com/glULTRA/OpenGL-Cross-Platform.git`
+
 ### Open Terminal in the project
+$`cd OpenGL-Cross-Platform/`
 ### Then type 
 $`cmake -S . -B ./build/ -G "Unix Makefiles" -D GLFW_BUILD_DOCS=OFF`
 ### Then goto the built dir
