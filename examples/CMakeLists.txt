@@ -33,7 +33,7 @@ add_executable(lightmaps lightmaps.cpp)
 add_executable(multiplelights multiplelights.cpp)
 add_executable(project project.cpp)
 IF(BUILD_ASSIMP)
-    add_executable(model 3D_Model.cpp)
+    add_executable(model 3D_model.cpp)
 ENDIF()
 
 include_directories(
