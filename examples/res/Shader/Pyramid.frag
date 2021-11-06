@@ -15,5 +15,5 @@ uniform float alpha;
 
 void main()
 {
-	FragColor = texture(pyramid_texture, TexCoords).rgb;
+	FragColor = texture(pyramid_texture, TexCoords).rgba;
 }
