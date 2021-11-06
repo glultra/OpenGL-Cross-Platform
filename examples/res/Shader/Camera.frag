@@ -14,5 +14,5 @@ uniform float alpha;
 
 void main()
 {
-	FragColor = mix(texture(container_texture, TexCoords), texture(face_texture, TexCoords), 0.2f) * vec4(ourColor, 1.0f);
+	FragColor = mix(texture(container_texture, TexCoords).rgb, texture(face_texture, TexCoords).rgb, 0.2f) * vec4(ourColor, 1.0f);
 }
