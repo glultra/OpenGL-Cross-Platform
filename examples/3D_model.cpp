@@ -18,8 +18,8 @@
 #include "imgui_impl_opengl3.h"
 
 
-#define SCR_WIDTH 1920
-#define SCR_HEIGHT 1080
+#define SCR_WIDTH 800
+#define SCR_HEIGHT 600
 #define MAPSIZE_X 10
 #define MAPSIZE_Y 10
 #define MAPSIZE_Z 10
