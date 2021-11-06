@@ -2,10 +2,14 @@ cmake_minimum_required(VERSION 3.14.0)
 
 project(OpenGL)
 
+option(BUILD_ASSIMP "Build assimp library" OFF)
+
 add_executable(${PROJECT_NAME} main.cpp)
 
 add_subdirectory(external/glfw-3.3.5)
-add_subdirectory(external/assimp)
+IF(BUILD_ASSIMP)
+    add_subdirectory(external/assimp)
+ENDIF()
 add_subdirectory(external/glad/src)
 add_subdirectory(external/imgui/src)
 add_subdirectory(external/stb/src)
@@ -39,8 +43,17 @@ target_link_directories(${PROJECT_NAME}
 
 IF(WIN32)
     target_link_libraries(${PROJECT_NAME} glfw GLAD IMGUI STB Engine shell32 user32 opengl32 winmm gdi32)
+    IF(BUILD_ASSIMP)
+        target_link_libraries(${PROJECT_NAME} glfw GLAD IMGUI STB Engine assimp shell32 user32 opengl32 winmm gdi32)
+    ENDIF()
 ELSEIF(UNIX)
     target_link_libraries(${PROJECT_NAME} glfw GLAD IMGUI STB Engine dl)
+    IF(BUILD_ASSIMP)
+        target_link_libraries(${PROJECT_NAME} glfw GLAD IMGUI STB Engine assimp dl)
+    ENDIF()
 ELSEIF(APPLE)
     target_link_libraries(${PROJECT_NAME} glfw GLAD IMGUI STB Engine)
+    IF(BUILD_ASSIMP)
+        target_link_libraries(${PROJECT_NAME} glfw GLAD IMGUI STB Engine assimp)
+    ENDIF()
 ENDIF()
