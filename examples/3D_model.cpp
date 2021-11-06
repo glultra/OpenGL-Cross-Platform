@@ -219,7 +219,7 @@ int main()
 	stbi_set_flip_vertically_on_load(true);
 
 	/* Model */
-	Model myBackPack("res/Object/Backpack/backpack.obj");
+	Model myBackPack("../res/Object/Backpack/backpack.obj");
 
 	/* Shader */
 	Shader myShader("res/Shader/3D_Model.vert", "res/Shader/3D_Model.frag");
