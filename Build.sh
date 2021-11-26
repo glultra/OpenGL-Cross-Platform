@@ -8,6 +8,7 @@ sudo apt-get install -y libxcursor-dev;
 sudo apt-get install -y libxi-dev;
 sudo apt-get -y update;
 sudo apt-get install -y libglfw3 libglfw3-dev;
+sudo apt-get install -y build-essential;
 cd OpenGL-Cross-Platform/;
 cmake -S . -B ./build/ -G "Unix Makefiles" -D GLFW_BUILD_DOCS=OFF;
 cd ./build/;
