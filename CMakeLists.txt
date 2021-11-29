@@ -6,7 +6,7 @@ option(BUILD_ASSIMP "Build assimp library" OFF)
 
 add_executable(${PROJECT_NAME} main.cpp)
 
-add_subdirectory(external/glfw-3.3.5)
+add_subdirectory(external/glfw)
 IF(BUILD_ASSIMP)
     add_subdirectory(external/assimp)
 ENDIF()
@@ -24,7 +24,7 @@ add_custom_target(always_rebuild ALL
 )
 
 target_include_directories(${PROJECT_NAME}
-    PUBLIC external/glfw-3.3.5/include
+    PUBLIC external/glfw/include
     PUBLIC external/assimp/include
     PUBLIC external/glad/include
     PUBLIC external/imgui/include
@@ -34,7 +34,7 @@ target_include_directories(${PROJECT_NAME}
 )
 
 target_link_directories(${PROJECT_NAME}
-    PRIVATE external/glfw-3.3.5/src
+    PRIVATE external/glfw/src
     PRIVATE external/assimp/code
     PRIVATE external/glad/src
     PRIVATE external/imgui/src

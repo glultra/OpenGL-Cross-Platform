@@ -1,4 +1,5 @@
 include_directories(
+    PUBLIC ../external/glfw/include
     PUBLIC ../include/
     PUBLIC ../external/glad/include/
     PUBLIC ../include/vendor/
