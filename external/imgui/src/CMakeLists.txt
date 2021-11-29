@@ -1,6 +1,6 @@
 include_directories(
+    PUBLIC ../../glfw/include/
     PUBLIC ../include/
-    PUBLIC ../glfw-3.3.5/include/
     PUBLIC ../glad/include/
 )
 
