@@ -4,7 +4,7 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/external/glfw-3.3.5/include",
+                "${workspaceFolder}/external/glfw/include",
                 "${workspaceFolder}/external/stb/include",
                 "${workspaceFolder}/external/assimp/include"
             ],
