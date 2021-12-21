@@ -122,12 +122,12 @@ int main(){
             shader.setMat4("model", model);
             shader.setMat4("projection", projection);
 
-            for(int i = 0; i < 10; i ++){
-                for(int j = 0; j < 10; j++)
+            for(int i = -10; i < 10; i ++){
+                for(int j = -10; j < 10; j++)
                 {
                     model = glm::mat4(1.0f);
                     model = glm::scale(model, glm::vec3(0.3f));
-                    model = glm::translate(model, glm::vec3(i ,0.0f, 0.0f));
+                    model = glm::translate(model, glm::vec3(i ,j, 0.0f));
                     shader.setMat4("model", model);
                     glActiveTexture(GL_TEXTURE0);
                     glBindTexture(GL_TEXTURE_2D, texture1);
