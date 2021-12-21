@@ -19,6 +19,7 @@ IF(BUILD_ASSIMP)
     project(model)
 ENDIF()
 project(tileMap)
+project(tileMap2)
 
 add_executable(window window.cpp)
 add_executable(rectangle rectangle.cpp)
@@ -37,6 +38,7 @@ IF(BUILD_ASSIMP)
     add_executable(model 3D_model.cpp)
 ENDIF()
 add_executable(tileMap tileMap.cpp)
+add_executable(tileMap2 tileMap2.cpp)
 
 include_directories(
     PUBLIC ../external/glfw-3.3.5/include
@@ -75,6 +77,7 @@ IF(WIN32)
         target_link_libraries(model glfw GLAD Engine STB IMGUI assimp shell32 user32 opengl32 winmm gdi32)
     ENDIF()
     target_link_libraries(tileMap glfw GLAD Engine STB shell32 user32 opengl32 winmm gdi32)
+    target_link_libraries(tileMap2 glfw GLAD Engine STB shell32 user32 opengl32 winmm gdi32)
 
 ELSEIF(UNIX)
     target_link_libraries(window glfw GLAD dl)
@@ -94,6 +97,7 @@ ELSEIF(UNIX)
         target_link_libraries(model glfw GLAD Engine STB IMGUI assimp dl)
     ENDIF()
     target_link_libraries(tileMap glfw GLAD Engine STB dl)
+    target_link_libraries(tileMap2 glfw GLAD Engine STB dl)
 
 ELSEIF(APPLE)
     target_link_libraries(window glfw GLAD)
@@ -112,5 +116,6 @@ ELSEIF(APPLE)
         target_link_libraries(model glfw GLAD Engine STB IMGUI assimp)
     ENDIF()
     target_link_libraries(tileMap glfw GLAD Engine STB)
+    target_link_libraries(tileMap2 glfw GLAD Engine STB)
 
 ENDIF()

@@ -17,6 +17,7 @@ double lastY = (SCR_HEIGHT/2.0f);
 double lastFrame = 0.0f;
 double deltaTime = 0.0f;
 bool isCursorHidden = true;
+glm::vec3 values = glm::vec3(0.0f);
 
 // Method Protypes
 void framebuffer_size_callback(GLFWwindow*window ,int width, int height);
@@ -70,6 +71,9 @@ int main(){
            return -1;
        }
 
+       // Settings
+       glEnable(GL_DEPTH_TEST);
+
        // Buffer
         GLuint VBO,VAO;
 
@@ -114,7 +118,7 @@ int main(){
 
             /* <----------Render----------> */
             glClearColor(0.1f, 0.2f, 0.3f, 1.0f);
-            glClear(GL_COLOR_BUFFER_BIT);
+            glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
             
             // Draw
             shader.use();
@@ -122,17 +126,22 @@ int main(){
             shader.setMat4("model", model);
             shader.setMat4("projection", projection);
 
-            for(int i = -10; i < 10; i ++){
-                for(int j = -10; j < 10; j++)
+            for(int i = -4; i < 4; i ++){
+                for(int j = -4; j < 4; j++)
                 {
-                    model = glm::mat4(1.0f);
-                    model = glm::scale(model, glm::vec3(0.3f));
-                    model = glm::translate(model, glm::vec3(i ,j, 0.0f));
-                    shader.setMat4("model", model);
-                    glActiveTexture(GL_TEXTURE0);
-                    glBindTexture(GL_TEXTURE_2D, texture1);
-                    glBindVertexArray(VAO);
-                    glDrawArrays(GL_TRIANGLES, 0, 6);
+                    for(int k = -4; k < 4; k++)
+                    {
+                        model = glm::mat4(1.0f);
+                        model = glm::scale(model, glm::vec3(0.5f));
+                        model = glm::translate(model, glm::vec3(i + values.x, values.y + j, k+values.z));
+                        model = glm::rotate(model, glm::radians(180.0f) , glm::vec3(values.x, values.y, values.z));
+                        //std::cout << values.x << "\n";
+                        shader.setMat4("model", model);
+                        glActiveTexture(GL_TEXTURE0);
+                        glBindTexture(GL_TEXTURE_2D, texture1);
+                        glBindVertexArray(VAO);
+                        glDrawArrays(GL_TRIANGLES, 0, 6);
+                    }
                 }
             }
             
@@ -156,12 +165,16 @@ void proccess_input(GLFWwindow*window){
     
     if(glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
         camera.ProcessKeyboard(FORWARD, deltaTime);
-    if(glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
+    else if(glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
         camera.ProcessKeyboard(BACKWARD, deltaTime);
     if(glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
         camera.ProcessKeyboard(RIGHT, deltaTime);
-    if(glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
+    else if(glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
         camera.ProcessKeyboard(LEFT, deltaTime);
+    if(glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS)
+        camera.ProcessKeyboard(UP, deltaTime);
+    else if(glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS)
+        camera.ProcessKeyboard(DOWN, deltaTime); 
 
     if(glfwGetKey(window, GLFW_KEY_H)){
         if(isCursorHidden){
@@ -193,6 +206,9 @@ void mouse_cursor_position(GLFWwindow* window, double xPos, double yPos){
 void update_time(float time){
     deltaTime = time - lastFrame;
     lastFrame = time;
+    values.x = (std::cos(time) / 2.0f) + 0.5f;
+    values.y = (std::sin(time) / 2.0f) + 0.5f;
+    values.z = (std::cos(time) / 2.0f) + 0.5f;
     // Find fps
 }
 
@@ -205,8 +221,8 @@ GLuint load_texture(const char* texture_path){
 	// Note : Don't take care so much about this filters if rn, if you would like you can delete. 
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-	//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-	//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+	//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 
 	int width, height, nrChannels;
 	unsigned char* data = stbi_load(texture_path, &width, &height, &nrChannels, 0);
