@@ -90,10 +90,10 @@ int main(){
         glEnableVertexAttribArray(1);
 
         // Texture
-        GLuint texture1 = load_texture("leaf.jpg");
+        GLuint texture1 = load_texture("examples/res/Texture/leaf.jpg");
 
        // Shader
-       Shader shader = Shader{"res/Shader/tileMap.vert", "res/Shader/tileMap.frag"};
+       Shader shader = Shader{"examples/res/Shader/tileMap.vert", "examples/res/Shader/tileMap.frag"};
        shader.use();
 
        // Game Loop

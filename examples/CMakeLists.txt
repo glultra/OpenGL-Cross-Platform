@@ -36,7 +36,7 @@ add_executable(project project.cpp)
 IF(BUILD_ASSIMP)
     add_executable(model 3D_model.cpp)
 ENDIF()
-add_executable(tileMap.cpp)
+add_executable(tileMap tileMap.cpp)
 
 include_directories(
     PUBLIC ../external/glfw-3.3.5/include
@@ -93,7 +93,7 @@ ELSEIF(UNIX)
     IF(BUILD_ASSIMP)
         target_link_libraries(model glfw GLAD Engine STB IMGUI assimp dl)
     ENDIF()
-    target_link_libraries(project glfw GLAD Engine STB dl)
+    target_link_libraries(tileMap glfw GLAD Engine STB dl)
 
 ELSEIF(APPLE)
     target_link_libraries(window glfw GLAD)
@@ -111,6 +111,6 @@ ELSEIF(APPLE)
     IF(BUILD_ASSIMP)
         target_link_libraries(model glfw GLAD Engine STB IMGUI assimp)
     ENDIF()
-    target_link_libraries(project glfw GLAD Engine STB)
+    target_link_libraries(tileMap glfw GLAD Engine STB)
 
 ENDIF()

@@ -90,7 +90,7 @@ int main(){
         glEnableVertexAttribArray(1);
 
         // Texture
-        GLuint texture1 = load_texture("leaf.jpg");
+        GLuint texture1 = load_texture("res/Texture/leaf.jpg");
 
        // Shader
        Shader shader = Shader{"res/Shader/tileMap.vert", "res/Shader/tileMap.frag"};
