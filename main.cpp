@@ -28,14 +28,48 @@ GLuint load_texture(const char* path);
 // Vertices
 // Rectnagle vertices
 float vertices[] = {
-    // Position             // Texture Coordinates
-    -0.5f, -0.5f, 0.0f,     0.0f, 0.0f,
-     0.5f, -0.5f, 0.0f,     1.0f, 0.0f,
-     0.5f,  0.5f, 0.0f,     1.0f, 1.0f,
-
-     0.5f,  0.5f, 0.0f,     1.0f, 1.0f,
-    -0.5f,  0.5f, 0.0f,     0.0f, 1.0f,
-    -0.5f, -0.5f, 0.0f,     0.0f, 0.0f,
+    /*Top Position* /		/* Color */			/* TexCoords */
+	-0.5f,-0.5f, 0.5f,		1.0f, 0.0f, 0.0f,		0.0f, 0.0f,
+	 0.5f,-0.5f, 0.5f,		0.0f, 1.0f, 0.0f,		1.0f, 0.0f,
+	 0.5f, 0.5f, 0.5f,		0.0f, 0.0f, 1.0f,		1.0f, 1.0f,
+	 0.5f, 0.5f, 0.5f,		0.0f, 0.0f, 1.0f,		1.0f, 1.0f,
+	-0.5f, 0.5f, 0.5f,		1.0f, 1.0f, 0.0f,		0.0f, 1.0f,
+	-0.5f,-0.5f, 0.5f,		1.0f, 0.0f, 0.0f,		0.0f, 0.0f,
+	/* Bottom Position */		/* Color */			/* TexCoords */
+	-0.5f,-0.5f,-0.5f,		1.0f, 0.0f, 0.0f,		0.0f, 0.0f,
+	 0.5f,-0.5f,-0.5f,		0.0f, 1.0f, 0.0f,		1.0f, 0.0f,
+	 0.5f, 0.5f,-0.5f,		0.0f, 0.0f, 1.0f,		1.0f, 1.0f,
+	 0.5f, 0.5f,-0.5f,		0.0f, 0.0f, 1.0f,		1.0f, 1.0f,
+	-0.5f, 0.5f,-0.5f,		1.0f, 1.0f, 0.0f,		0.0f, 1.0f,
+	-0.5f,-0.5f,-0.5f,		1.0f, 0.0f, 0.0f,		0.0f, 0.0f,
+	/* Left Position */		/* Color */			/* TexCoords */
+	-0.5f,-0.5f,-0.5f,		1.0f, 0.0f, 0.0f,		0.0f, 0.0f,
+	-0.5f, 0.5f,-0.5f,		0.0f, 1.0f, 0.0f,		1.0f, 0.0f,
+	-0.5f, 0.5f, 0.5f,		0.0f, 0.0f, 1.0f,		1.0f, 1.0f,
+	-0.5f, 0.5f, 0.5f,		0.0f, 0.0f, 1.0f,		1.0f, 1.0f,
+	-0.5f,-0.5f, 0.5f,		1.0f, 1.0f, 0.0f,		0.0f, 1.0f,
+	-0.5f,-0.5f,-0.5f,		1.0f, 0.0f, 0.0f,		0.0f, 0.0f,
+	/* Right Position */		/* Color */			/* TexCoords */
+	 0.5f,-0.5f,-0.5f,		1.0f, 0.0f, 0.0f,		0.0f, 0.0f,
+	 0.5f, 0.5f,-0.5f,		0.0f, 1.0f, 0.0f,		1.0f, 0.0f,
+	 0.5f, 0.5f, 0.5f,		0.0f, 0.0f, 1.0f,		1.0f, 1.0f,
+	 0.5f, 0.5f, 0.5f,		0.0f, 0.0f, 1.0f,		1.0f, 1.0f,
+	 0.5f,-0.5f, 0.5f,		1.0f, 1.0f, 0.0f,		0.0f, 1.0f,
+	 0.5f,-0.5f,-0.5f,		1.0f, 0.0f, 0.0f,		0.0f, 0.0f,
+	/* Back Position */		/* Color */			/* TexCoords */
+   	-0.5f, 0.5f,-0.5f,		1.0f, 0.0f, 0.0f,		0.0f, 0.0f,
+	 0.5f, 0.5f,-0.5f,		0.0f, 1.0f, 0.0f,		1.0f, 0.0f,
+	 0.5f, 0.5f, 0.5f,		0.0f, 0.0f, 1.0f,		1.0f, 1.0f,
+	 0.5f, 0.5f, 0.5f,		0.0f, 0.0f, 1.0f,		1.0f, 1.0f,
+   	-0.5f, 0.5f, 0.5f,		1.0f, 1.0f, 0.0f,		0.0f, 1.0f,
+   	-0.5f, 0.5f,-0.5f,		1.0f, 0.0f, 0.0f,		0.0f, 0.0f,
+	/* Front Position */		/* Color */			/* TexCoords */
+	-0.5f,-0.5f,-0.5f,		1.0f, 0.0f, 0.0f,		0.0f, 0.0f,
+	 0.5f,-0.5f,-0.5f,		0.0f, 1.0f, 0.0f,		1.0f, 0.0f,
+	 0.5f,-0.5f, 0.5f,		0.0f, 0.0f, 1.0f,		1.0f, 1.0f,
+	 0.5f,-0.5f, 0.5f,		0.0f, 0.0f, 1.0f,		1.0f, 1.0f,
+	-0.5f,-0.5f, 0.5f,		1.0f, 1.0f, 0.0f,		0.0f, 1.0f,
+	-0.5f,-0.5f,-0.5f,		1.0f, 0.0f, 0.0f,		0.0f, 0.0f,
 };
 
 int main(){
@@ -62,6 +96,7 @@ int main(){
        glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
        glfwSetCursorPosCallback(window, mouse_cursor_position);
        glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+       //glfwSetWindowPos(window, 700, 100);
 
        // Check Glad or Glew (any opengl loader)
        if(!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)){
@@ -69,6 +104,9 @@ int main(){
            glfwTerminate();
            return -1;
        }
+
+       // Settings 
+       glEnable(GL_DEPTH_TEST);
 
        // Buffer
         GLuint VBO,VAO;
@@ -82,19 +120,27 @@ int main(){
         glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), &vertices, GL_STATIC_DRAW);
 
         // Attribute 1 which is Position Attribute.
-        glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
+        glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
         glEnableVertexAttribArray(0);
 
         // Attribute 2 which is Texture Coordinates Attribute.
-        glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
+        glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3 * sizeof(float)));
         glEnableVertexAttribArray(1);
+        
+        // Attribute 3 which is Texture Coordinates Attribute.
+        glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
+        glEnableVertexAttribArray(2);
 
         // Texture
         GLuint texture1 = load_texture("examples/res/Texture/leaf.jpg");
 
        // Shader
-       Shader shader = Shader{"examples/res/Shader/tileMap.vert", "examples/res/Shader/tileMap.frag"};
+       Shader shader = Shader{"shader.vert", "shader.frag"};
        shader.use();
+       shader.setInt("myTexture", 0);
+
+       // Camera
+       camera.Yaw = -90.4001;
 
        // Game Loop
        while(!glfwWindowShouldClose(window)){
@@ -114,7 +160,7 @@ int main(){
 
             /* <----------Render----------> */
             glClearColor(0.1f, 0.2f, 0.3f, 1.0f);
-            glClear(GL_COLOR_BUFFER_BIT);
+            glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
             
             // Draw
             shader.use();
@@ -122,19 +168,10 @@ int main(){
             shader.setMat4("model", model);
             shader.setMat4("projection", projection);
 
-            for(int i = -10; i < 10; i ++){
-                for(int j = -10; j < 10; j++)
-                {
-                    model = glm::mat4(1.0f);
-                    model = glm::scale(model, glm::vec3(0.3f));
-                    model = glm::translate(model, glm::vec3(i ,j, 0.0f));
-                    shader.setMat4("model", model);
-                    glActiveTexture(GL_TEXTURE0);
-                    glBindTexture(GL_TEXTURE_2D, texture1);
-                    glBindVertexArray(VAO);
-                    glDrawArrays(GL_TRIANGLES, 0, 6);
-                }
-            }
+            glActiveTexture(GL_TEXTURE0);
+            glBindTexture(GL_TEXTURE_2D, texture1);
+            glBindVertexArray(VAO);
+            glDrawArrays(GL_TRIANGLES, 0, 36);
             
 
             // Swap Buffers
@@ -156,12 +193,16 @@ void proccess_input(GLFWwindow*window){
     
     if(glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
         camera.ProcessKeyboard(FORWARD, deltaTime);
-    if(glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
+    else if(glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
         camera.ProcessKeyboard(BACKWARD, deltaTime);
     if(glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
         camera.ProcessKeyboard(RIGHT, deltaTime);
-    if(glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
+    else if(glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
         camera.ProcessKeyboard(LEFT, deltaTime);
+    if(glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS)
+        camera.ProcessKeyboard(UP, deltaTime);
+    else if(glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS)
+        camera.ProcessKeyboard(DOWN, deltaTime);
 
     if(glfwGetKey(window, GLFW_KEY_H)){
         if(isCursorHidden){
