@@ -23,6 +23,12 @@ add_custom_target(always_rebuild ALL
     ${CMAKE_SOURCE_DIR}/examples/res ${CMAKE_BINARY_DIR}/examples/res
 )
 
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/shader.vert
+     DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/shader.frag
+     DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+
 target_include_directories(${PROJECT_NAME}
     PUBLIC external/glfw/include
     PUBLIC external/assimp/include
