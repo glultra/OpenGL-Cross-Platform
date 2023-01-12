@@ -29,13 +29,13 @@ uniform vec3 viewPos;
 void main()
 {
 	// Ambient
-	vec3 ambient = light.ambient * texture(material.diffuse, TexCoords);
+	vec3 ambient = light.ambient * vec3(texture(material.diffuse, TexCoords));
 
 	// Diffuse
 	vec3 norm = normalize(normal);
 	vec3 lightDir = normalize(light.position-fragPos);
 	float diff = max(dot(norm,lightDir),0.0f);
-	vec3 diffuse = light.diffuse * diff * texture(material.diffuse,TexCoords);
+	vec3 diffuse = light.diffuse * diff * vec3(texture(material.diffuse,TexCoords));
 
 	// Specular
 	vec3 viewDir = normalize(viewPos - fragPos);
